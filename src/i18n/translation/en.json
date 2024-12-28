@@ -1,0 +1,145 @@
+{
+    "common": {
+      "loading": "Loading...",
+      "error": "Something went wrong",
+      "success": "Success",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "save": "Save",
+      "edit": "Edit",
+      "delete": "Delete",
+      "view": "View",
+      "search": "Search",
+      "filter": "Filter",
+      "sort": "Sort",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous",
+      "more": "More"
+    },
+    "auth": {
+      "login": "Login",
+      "signup": "Sign Up",
+      "logout": "Logout",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot Password?",
+      "noAccount": "Don't have an account?",
+      "haveAccount": "Already have an account?",
+      "loginWith": "Login with {{provider}}",
+      "signupSuccess": "Account created successfully",
+      "loginSuccess": "Logged in successfully"
+    },
+    "navigation": {
+      "home": "Home",
+      "marketplace": "Marketplace",
+      "training": "Training",
+      "community": "Community",
+      "events": "Events",
+      "mentorship": "Mentorship",
+      "dashboard": "Dashboard",
+      "settings": "Settings",
+      "profile": "Profile"
+    },
+    "marketplace": {
+      "products": "Products",
+      "addProduct": "Add Product",
+      "categories": "Categories",
+      "filters": {
+        "price": "Price",
+        "category": "Category",
+        "location": "Location",
+        "sortBy": "Sort By",
+        "priceRange": "Price Range",
+        "minPrice": "Min Price",
+        "maxPrice": "Max Price"
+      },
+      "product": {
+        "name": "Product Name",
+        "description": "Description",
+        "price": "Price",
+        "quantity": "Quantity",
+        "category": "Category",
+        "images": "Images",
+        "addToCart": "Add to Cart",
+        "outOfStock": "Out of Stock",
+        "inStock": "In Stock"
+      }
+    },
+    "training": {
+      "courses": "Courses",
+      "myCourses": "My Courses",
+      "courseDetails": "Course Details",
+      "lessons": "Lessons",
+      "resources": "Resources",
+      "progress": "Progress",
+      "certificate": "Certificate",
+      "enroll": "Enroll",
+      "continue": "Continue Learning",
+      "complete": "Complete Course",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
+    },
+    "community": {
+      "posts": "Posts",
+      "createPost": "Create Post",
+      "comments": "Comments",
+      "reply": "Reply",
+      "share": "Share",
+      "report": "Report",
+      "follow": "Follow",
+      "unfollow": "Unfollow",
+      "members": "Members",
+      "events": {
+        "upcoming": "Upcoming Events",
+        "past": "Past Events",
+        "register": "Register",
+        "unregister": "Unregister",
+        "location": "Location",
+        "date": "Date",
+        "time": "Time",
+        "online": "Online Event",
+        "inPerson": "In-Person Event"
+      }
+    },
+    "dashboard": {
+      "overview": "Overview",
+      "stats": "Statistics",
+      "orders": "Orders",
+      "transactions": "Transactions",
+      "products": "Products",
+      "customers": "Customers",
+      "inventory": "Inventory",
+      "analytics": {
+        "sales": "Sales",
+        "revenue": "Revenue",
+        "orders": "Orders",
+        "customers": "Customers"
+      }
+    },
+    "profile": {
+      "personalInfo": "Personal Information",
+      "businessInfo": "Business Information",
+      "contactInfo": "Contact Information",
+      "changePassword": "Change Password",
+      "preferences": "Preferences",
+      "notifications": "Notifications",
+      "businessDetails": {
+        "name": "Business Name",
+        "type": "Business Type",
+        "description": "Business Description",
+        "location": "Business Location"
+      }
+    },
+    "errors": {
+      "required": "This field is required",
+      "invalidEmail": "Invalid email address",
+      "invalidPassword": "Password must be at least 8 characters",
+      "networkError": "Network error",
+      "unauthorized": "Unauthorized access",
+      "notFound": "Not found"
+    }
+  }

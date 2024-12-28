@@ -1,0 +1,145 @@
+{
+    "common": {
+      "loading": "لوڈ ہو رہا ہے۔۔۔",
+      "error": "کچھ غلط ہو گیا",
+      "success": "کامیاب",
+      "submit": "جمع کرائیں",
+      "cancel": "منسوخ کریں",
+      "save": "محفوظ کریں",
+      "edit": "ترمیم کریں",
+      "delete": "حذف کریں",
+      "view": "دیکھیں",
+      "search": "تلاش کریں",
+      "filter": "فلٹر کریں",
+      "sort": "ترتیب دیں",
+      "back": "واپس",
+      "next": "اگلا",
+      "previous": "پچھلا",
+      "more": "مزید"
+    },
+    "auth": {
+      "login": "لاگ ان",
+      "signup": "سائن اپ",
+      "logout": "لاگ آؤٹ",
+      "email": "ای میل",
+      "password": "پاس ورڈ",
+      "forgotPassword": "پاس ورڈ بھول گئے؟",
+      "noAccount": "اکاؤنٹ نہیں ہے؟",
+      "haveAccount": "پہلے سے اکاؤنٹ ہے؟",
+      "loginWith": "{{provider}} کے ساتھ لاگ ان کریں",
+      "signupSuccess": "اکاؤنٹ کامیابی سے بن گیا",
+      "loginSuccess": "کامیابی سے لاگ ان ہو گیا"
+    },
+    "navigation": {
+      "home": "ہوم",
+      "marketplace": "مارکیٹ پلیس",
+      "training": "تربیت",
+      "community": "کمیونٹی",
+      "events": "تقریبات",
+      "mentorship": "رہنمائی",
+      "dashboard": "ڈیش بورڈ",
+      "settings": "ترتیبات",
+      "profile": "پروفائل"
+    },
+    "marketplace": {
+      "products": "مصنوعات",
+      "addProduct": "مصنوعات شامل کریں",
+      "categories": "زمرے",
+      "filters": {
+        "price": "قیمت",
+        "category": "زمرہ",
+        "location": "مقام",
+        "sortBy": "ترتیب",
+        "priceRange": "قیمت کی حد",
+        "minPrice": "کم از کم قیمت",
+        "maxPrice": "زیادہ سے زیادہ قیمت"
+      },
+      "product": {
+        "name": "مصنوع کا نام",
+        "description": "تفصیل",
+        "price": "قیمت",
+        "quantity": "تعداد",
+        "category": "زمرہ",
+        "images": "تصاویر",
+        "addToCart": "کارٹ میں شامل کریں",
+        "outOfStock": "اسٹاک میں نہیں",
+        "inStock": "اسٹاک میں موجود"
+      }
+    },
+    "training": {
+      "courses": "کورسز",
+      "myCourses": "میرے کورسز",
+      "courseDetails": "کورس کی تفصیلات",
+      "lessons": "اسباق",
+      "resources": "وسائل",
+      "progress": "پیش رفت",
+      "certificate": "سرٹیفکیٹ",
+      "enroll": "داخلہ لیں",
+      "continue": "جاری رکھیں",
+      "complete": "مکمل کریں",
+      "levels": {
+        "beginner": "ابتدائی",
+        "intermediate": "درمیانی",
+        "advanced": "ایڈوانس"
+      }
+    },
+    "community": {
+      "posts": "پوسٹس",
+      "createPost": "پوسٹ بنائیں",
+      "comments": "تبصرے",
+      "reply": "جواب دیں",
+      "share": "شیئر کریں",
+      "report": "رپورٹ کریں",
+      "follow": "فالو کریں",
+      "unfollow": "ان فالو کریں",
+      "members": "ممبران",
+      "events": {
+        "upcoming": "آنے والی تقریبات",
+        "past": "گزشتہ تقریبات",
+        "register": "رجسٹر کریں",
+        "unregister": "رجسٹریشن منسوخ کریں",
+        "location": "مقام",
+        "date": "تاریخ",
+        "time": "وقت",
+        "online": "آن لائن تقریب",
+        "inPerson": "براہ راست تقریب"
+      }
+    },
+    "dashboard": {
+      "overview": "جائزہ",
+      "stats": "شماریات",
+      "orders": "آرڈرز",
+      "transactions": "لین دین",
+      "products": "مصنوعات",
+      "customers": "گاہک",
+      "inventory": "انوینٹری",
+      "analytics": {
+        "sales": "فروخت",
+        "revenue": "آمدنی",
+        "orders": "آرڈرز",
+        "customers": "گاہک"
+      }
+    },
+    "profile": {
+      "personalInfo": "ذاتی معلومات",
+      "businessInfo": "کاروباری معلومات",
+      "contactInfo": "رابطہ کی معلومات",
+      "changePassword": "پاس ورڈ تبدیل کریں",
+      "preferences": "ترجیحات",
+      "notifications": "نوٹیفیکیشنز",
+      "businessDetails": {
+        "name": "کاروبار کا نام",
+        "type": "کاروبار کی قسم",
+        "description": "کاروبار کی تفصیل",
+        "location": "کاروبار کا مقام"
+      }
+    },
+    "errors": {
+      "required": "یہ فیلڈ درکار ہے",
+      "invalidEmail": "غلط ای میل ایڈریس",
+      "invalidPassword": "پاس ورڈ کم از کم 8 حروف کا ہونا چاہیے",
+      "networkError": "نیٹ ورک کی خرابی",
+      "unauthorized": "غیر مجاز رسائی",
+      "notFound": "نہیں ملا"
+    }
+  }
