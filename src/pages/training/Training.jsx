@@ -3,9 +3,7 @@ import { useSelector } from 'react-redux';
 import { 
   Button, 
   Tabs, 
-  Progress, 
-  Card,
-  Spinner 
+  Card 
 } from 'flowbite-react';
 import { 
   HiAcademicCap,
@@ -157,7 +155,7 @@ const Training = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
-        <Tabs.Group
+        <Tabs
           style="underline"
           onActiveTabChange={index => {
             const tabs = ['courses', 'resources', 'progress'];
@@ -188,6 +186,7 @@ const Training = () => {
             <ResourceLibrary
               onDownload={(resourceId) => {}}
               isLoading={isLoading}
+              resources={[]}
             />
           </Tabs.Item>
 
@@ -205,7 +204,7 @@ const Training = () => {
               />
             </Tabs.Item>
           )}
-        </Tabs.Group>
+        </Tabs>
       </div>
 
       {/* Features Section */}

@@ -100,7 +100,6 @@ const MainLayout = ({ children }) => {
 
         <main className={`
           flex-1
-          ${shouldShowSidebar() ? 'md:ml-64' : ''}
           bg-gray-50 dark:bg-gray-900
           transition-all duration-300
         `}>

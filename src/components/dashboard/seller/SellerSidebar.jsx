@@ -93,7 +93,7 @@ const SellerSidebar = ({ isOpen }) => {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-2 text-center">
+        {/* <div className="grid grid-cols-2 gap-2 text-center">
           <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-2">
             <p className="text-sm font-medium text-gray-900 dark:text-white">23</p>
             <p className="text-xs text-gray-500 dark:text-gray-400">
@@ -106,7 +106,7 @@ const SellerSidebar = ({ isOpen }) => {
               {language === 'ur' ? 'فروخت' : 'Sales'}
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Navigation */}

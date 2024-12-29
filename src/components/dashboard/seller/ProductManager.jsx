@@ -55,7 +55,8 @@ const ProductManager = () => {
     category: '',
     stock: '',
     images: [],
-    status: 'active'
+    status: 'active',
+    seller: ''
   });
 
   // Product categories
@@ -80,11 +81,12 @@ const ProductManager = () => {
       });
 
       const response = await fetch(
-        `http://localhost:8080/api/products?${queryParams}`,
+        `http://localhost:8080/api/my-products?${queryParams}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`
-          }
+          }, 
+          credentials: 'include'
         }
       );
 
@@ -124,7 +126,7 @@ const ProductManager = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      
+
       const formData = new FormData();
       Object.keys(productForm).forEach(key => {
         if (key !== 'images') {
@@ -138,16 +140,19 @@ const ProductManager = () => {
         }
       });
 
-      const url = editMode 
+      productForm.seller = currentUser._id;
+
+      const url = editMode
         ? `http://localhost:8080/api/products/${selectedProduct._id}`
         : 'http://localhost:8080/api/products';
 
       const response = await fetch(url, {
         method: editMode ? 'PATCH' : 'POST',
         headers: {
-          Authorization: `Bearer ${accessToken}`
+          'Content-Type': 'application/json', 
         },
-        body: formData
+        body: JSON.stringify(productForm),
+        credentials: 'include'
       });
 
       const data = await response.json();
@@ -174,7 +179,8 @@ const ProductManager = () => {
           method: 'DELETE',
           headers: {
             Authorization: `Bearer ${accessToken}`
-          }
+          }, 
+          credentials: 'include'
         }
       );
 
@@ -275,7 +281,7 @@ const ProductManager = () => {
               {language === 'ur' ? 'کوئی مصنوعات نہیں ملیں' : 'No Products Found'}
             </h3>
             <p className="text-gray-500">
-              {language === 'ur' 
+              {language === 'ur'
                 ? 'نئی مصنوعات شامل کرنے کے لیے بٹن پر کلک کریں'
                 : 'Click the button above to add new products'}
             </p>
@@ -308,7 +314,7 @@ const ProductManager = () => {
                     </div>
                   </Table.Cell>
                   <Table.Cell>
-                    {language === 'ur' 
+                    {language === 'ur'
                       ? categories.find(cat => cat.value === product.category)?.labelUrdu
                       : categories.find(cat => cat.value === product.category)?.label}
                   </Table.Cell>
@@ -322,7 +328,7 @@ const ProductManager = () => {
                     <Badge
                       color={product.status === 'active' ? 'success' : 'gray'}
                     >
-                      {product.status === 'active' 
+                      {product.status === 'active'
                         ? (language === 'ur' ? 'فعال' : 'Active')
                         : (language === 'ur' ? 'غیر فعال' : 'Inactive')}
                     </Badge>
@@ -384,7 +390,7 @@ const ProductManager = () => {
         size="xl"
       >
         <Modal.Header>
-          {editMode 
+          {editMode
             ? (language === 'ur' ? 'مصنوعات میں ترمیم' : 'Edit Product')
             : (language === 'ur' ? 'نئی مصنوعات شامل کریں' : 'Add New Product')}
         </Modal.Header>
@@ -520,7 +526,7 @@ const ProductManager = () => {
                   />
                 </label>
               </div>
-              
+
               {/* Image Previews */}
               {productForm.images.length > 0 && (
                 <div className="grid grid-cols-5 gap-4 mt-4">
@@ -584,7 +590,7 @@ const ProductManager = () => {
               ) : (
                 <HiPlus className="w-4 h-4 mr-2" />
               )}
-              {editMode 
+              {editMode
                 ? (language === 'ur' ? 'اپ ڈیٹ کریں' : 'Update')
                 : (language === 'ur' ? 'شامل کریں' : 'Add')}
             </Button>

@@ -48,12 +48,14 @@ const Marketplace = () => {
       setIsLoading(true);
       try {
         // Fetch products
-        const productsResponse = await fetch('/products?' + new URLSearchParams(filters));
+        const productsResponse = await fetch('http://localhost:8080/api/products?' + new URLSearchParams(filters), {
+          credentials: 'include'
+        });
         const productsData = await productsResponse.json();
         setProducts(productsData.products);
 
         // Fetch categories
-        const categoriesResponse = await fetch('/categories');
+        const categoriesResponse = await fetch('http://localhost:8080/api/categories');
         const categoriesData = await categoriesResponse.json();
         setCategories(categoriesData.categories);
       } catch (error) {

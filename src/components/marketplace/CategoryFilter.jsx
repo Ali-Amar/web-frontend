@@ -125,7 +125,7 @@ const CategoryFilter = ({
                   <Checkbox
                     id={category._id}
                     checked={filters.category === category._id}
-                    onChange={() => handleFilterChange('category', category._id)}
+                    onChange={() => handleFilterChange('category', category.name)}
                   />
                   <Label htmlFor={category._id} className="ml-2">
                     {language === 'ur' ? category.nameUrdu : category.name}

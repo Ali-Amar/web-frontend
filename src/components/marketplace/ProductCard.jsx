@@ -20,8 +20,9 @@ const ProductCard = ({ product, onAddToCart, onAddToWishlist }) => {
     reviews,
     seller,
     stock,
-    tags
   } = product;
+
+  console.log(product);
 
   const discountPercentage = discountedPrice
     ? Math.round(((price - discountedPrice) / price) * 100)
@@ -57,7 +58,7 @@ const ProductCard = ({ product, onAddToCart, onAddToWishlist }) => {
       {/* Product Image */}
       <Link to={`/product/${_id}`} className="block aspect-square overflow-hidden rounded-t-lg">
         <img
-          src={images[0]}
+          src={'https://www.mountaingoatsoftware.com/uploads/blog/2016-09-06-what-is-a-product.png'}
           alt={name}
           className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
         />
@@ -70,11 +71,11 @@ const ProductCard = ({ product, onAddToCart, onAddToWishlist }) => {
           <Badge color="gray" size="sm">
             {category.name}
           </Badge>
-          {tags?.slice(0, 2).map((tag, index) => (
+          {/* {tags?.slice(0, 2).map((tag, index) => (
             <Badge key={index} color="info" size="sm">
               {tag}
             </Badge>
-          ))}
+          ))} */}
         </div>
 
         {/* Title & Price */}
@@ -103,7 +104,7 @@ const ProductCard = ({ product, onAddToCart, onAddToWishlist }) => {
           </div>
         </div>
 
-        {/* Rating & Reviews */}
+        {/* Rating & Reviews
         <div className="flex items-center gap-2 mb-3">
           <div className="flex items-center">
             <HiStar className="w-5 h-5 text-yellow-400" />
@@ -114,12 +115,12 @@ const ProductCard = ({ product, onAddToCart, onAddToWishlist }) => {
           <span className="text-sm text-gray-500 dark:text-gray-400">
             ({reviews?.length} {language === 'ur' ? 'جائزے' : 'reviews'})
           </span>
-        </div>
+        </div> */}
 
         {/* Seller Info */}
         <Link to={`/seller/${seller._id}`} className="flex items-center gap-2 mb-4">
           <img
-            src={seller.avatar}
+            src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNczU0YtXNFkne_nB0ttJ37TpL-zZ3Nu0YGQ&s'}
             alt={seller.businessName}
             className="w-6 h-6 rounded-full"
           />

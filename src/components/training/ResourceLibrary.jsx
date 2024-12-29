@@ -201,7 +201,7 @@ const ResourceLibrary = ({ resources, isLoading, onDownload }) => {
       </div>
 
       {/* Resource Type Tabs */}
-      <Tabs.Group
+      <Tabs
         style="underline"
         onActiveTabChange={index => {
           const types = ['all', 'document', 'video', 'template', 'guide'];
@@ -220,7 +220,7 @@ const ResourceLibrary = ({ resources, isLoading, onDownload }) => {
             active={activeTab === type}
           />
         ))}
-      </Tabs.Group>
+      </Tabs>
 
       {/* Resource List */}
       {isLoading ? (
