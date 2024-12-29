@@ -48,12 +48,6 @@ const SellerSidebar = ({ isOpen }) => {
       badge: null
     },
     {
-      name: language === 'ur' ? 'تجزیات' : 'Analytics',
-      icon: HiChartBar,
-      path: '/seller/analytics',
-      badge: null
-    },
-    {
       name: language === 'ur' ? 'صارفین' : 'Customers',
       icon: HiOutlineUserGroup,
       path: '/seller/customers',
