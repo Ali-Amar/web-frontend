@@ -152,16 +152,10 @@ const Sidebar = ({ isOpen }) => {
         </h4>
         <div className="space-y-2">
           <Link
-            to="/help"
+            to="/Support"
             className="block text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
           >
             {language === 'ur' ? 'مدد مرکز' : 'Help Center'}
-          </Link>
-          <Link
-            to="/feedback"
-            className="block text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            {language === 'ur' ? 'رائے دیں' : 'Give Feedback'}
           </Link>
         </div>
       </div>
