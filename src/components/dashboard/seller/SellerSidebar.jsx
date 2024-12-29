@@ -23,19 +23,19 @@ const SellerSidebar = ({ isOpen }) => {
     {
       name: language === 'ur' ? 'ڈیش بورڈ' : 'Dashboard',
       icon: HiHome,
-      path: '/dashboard',
+      path: '/seller',
       badge: null
     },
     {
       name: language === 'ur' ? 'پروڈکٹس' : 'Products',
       icon: HiShoppingBag,
-      path: '/dashboard/products',
+      path: '/seller/products',
       badge: null
     },
     {
       name: language === 'ur' ? 'آرڈرز' : 'Orders',
       icon: HiDocumentText,
-      path: '/dashboard/orders',
+      path: '/seller/orders',
       badge: {
         text: '3',
         color: 'warning'
@@ -44,25 +44,25 @@ const SellerSidebar = ({ isOpen }) => {
     {
       name: language === 'ur' ? 'فروخت' : 'Sales',
       icon: HiCurrencyRupee,
-      path: '/dashboard/sales',
+      path: '/seller/sales',
       badge: null
     },
     {
       name: language === 'ur' ? 'تجزیات' : 'Analytics',
       icon: HiChartBar,
-      path: '/dashboard/analytics',
+      path: '/seller/analytics',
       badge: null
     },
     {
       name: language === 'ur' ? 'صارفین' : 'Customers',
       icon: HiOutlineUserGroup,
-      path: '/dashboard/customers',
+      path: '/seller/customers',
       badge: null
     },
     {
       name: language === 'ur' ? 'پیغامات' : 'Messages',
       icon: HiChat,
-      path: '/dashboard/messages',
+      path: '/seller/messages',
       badge: {
         text: '2',
         color: 'info'
@@ -80,7 +80,7 @@ const SellerSidebar = ({ isOpen }) => {
       <div className="p-6 border-b dark:border-gray-700">
         <div className="flex items-center mb-4">
           <img
-            src={currentUser?.avatar || '/placeholder-avatar.png'}
+            src={currentUser?.avatar || '/public/seller-sidebar.jpg'}
             alt="Shop Logo"
             className="w-12 h-12 rounded-full object-cover"
           />

@@ -105,7 +105,7 @@ const Home = () => {
             </div>
             <div className="lg:w-1/2">
               <img 
-                src="/hero-image.jpg" 
+                src="/logo.png" 
                 alt="Rural women entrepreneurs" 
                 className="rounded-lg shadow-xl"
               />

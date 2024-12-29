@@ -23,7 +23,7 @@ const MentorSidebar = ({ isOpen }) => {
     {
       name: language === 'ur' ? 'ڈیش بورڈ' : 'Dashboard',
       icon: HiHome,
-      path: '/dashboard',
+      path: '/mentor/dashboard',
       badge: null
     },
     {
@@ -72,7 +72,7 @@ const MentorSidebar = ({ isOpen }) => {
       <div className="p-6 border-b dark:border-gray-700">
         <div className="flex items-center mb-4">
           <img
-            src={currentUser?.avatar || '/placeholder-avatar.png'}
+            src={currentUser?.avatar || '/public/empty.jpg'}
             alt="Mentor Profile"
             className="w-12 h-12 rounded-full object-cover"
           />

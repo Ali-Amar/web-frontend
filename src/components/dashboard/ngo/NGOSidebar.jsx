@@ -23,7 +23,7 @@ const NGOSidebar = ({ isOpen }) => {
     {
       name: language === 'ur' ? 'ڈیش بورڈ' : 'Dashboard',
       icon: HiHome,
-      path: '/dashboard',
+      path: 'ngo/dashboard',
       badge: null
     },
     {
@@ -81,7 +81,7 @@ const NGOSidebar = ({ isOpen }) => {
       <div className="p-6 border-b dark:border-gray-700">
         <div className="flex items-center mb-4">
           <img
-            src={currentUser?.avatar || '/placeholder-avatar.png'}
+            src={currentUser?.avatar || '/public/empty.jpg'}
             alt="NGO Profile"
             className="w-12 h-12 rounded-full object-cover"
           />
