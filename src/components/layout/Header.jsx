@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Button, Avatar, Tooltip, Dropdown } from "flowbite-react";
-import { 
-  FaBars, 
-  FaTimes, 
-  FaSun, 
-  FaMoon, 
+import {
+  FaBars,
+  FaTimes,
+  FaSun,
+  FaMoon,
   FaGlobe,
   FaShoppingBag,
   FaBell
 } from "react-icons/fa";
-import { 
-  HiOutlineUserCircle, 
+import {
+  HiOutlineUserCircle,
   HiOutlineLogout,
   HiOutlineCog,
   HiOutlineShoppingBag,
@@ -103,9 +103,9 @@ const Header = ({ onToggleSidebar }) => {
 
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
-              <img 
-                src="/logo.png" 
-                alt="WE Market" 
+              <img
+                src="/logo.png"
+                alt="WE Market"
                 className="h-8 w-auto"
               />
               <span className="text-xl font-bold text-gray-900 dark:text-white hidden sm:block">
@@ -172,10 +172,10 @@ const Header = ({ onToggleSidebar }) => {
                 <Tooltip content="Notifications">
                   {notificationButton}
                 </Tooltip>
-                
+
                 {currentUser.role === 'buyer' && (
                   <Tooltip content="Shopping Cart">
-                    {cartButton}
+                    <Link to='/cart'>{cartButton}</Link>
                   </Tooltip>
                 )}
               </>
@@ -185,7 +185,7 @@ const Header = ({ onToggleSidebar }) => {
             {currentUser ? (
               <Dropdown
                 label={
-                  <Avatar 
+                  <Avatar
                     img={currentUser.avatar}
                     rounded
                     size="sm"

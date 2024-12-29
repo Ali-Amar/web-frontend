@@ -59,7 +59,8 @@ const Analytics = () => {
       const response = await fetch(`http://localhost:8080/api/analytics/sales?timeRange=${timeRange}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`
-        }
+        }, 
+        credentials: 'include'
       });
       
       const data = await response.json();
