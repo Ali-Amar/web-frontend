@@ -27,10 +27,8 @@ import CreateListing from "./pages/marketplace/CreateListing";
 import Training from "./pages/training/Training";
 import CourseDetails from "./pages/training/CourseDetails";
 // import ResourceLibrary from "./pages/training/ResourceLibrary";
-import Mentorship from "./pages/training/Mentorship";
-import MentorProfile from "./pages/training/MentorProfile";
-import MentorDashboard from "./pages/training/MentorDashboard";
-import MentorshipSessions from "./pages/training/MentorshipSessions";
+// import Mentorship from "./pages/training/Mentorship";
+// import MentorshipSessions from "./pages/training/MentorshipSessions";
 
 // Community
 import Community from "./pages/community/Community";
@@ -49,17 +47,10 @@ import ProductManager from "./components/dashboard/seller/ProductManager";
 import SellerProfile from "./components/dashboard/seller/SellerProfile";
 import Analytics from "./components/dashboard/seller/Analytics";
 
-// NGO Components
-import NGODashboard from "./pages/ngo/NGODashboard";
-import NGOPrograms from "./pages/ngo/NGOPrograms";
-import NGOReports from "./pages/ngo/NGOReports";
-
 // Utils & Route Protection
 import PrivateRoute from "./utils/PrivateRoute";
 import AdminRoute from "./utils/AdminRoute";
 import SellerRoute from "./utils/SellerRoute";
-import MentorRoute from "./utils/MentorRoute";
-import NGORoute from "./utils/NGORoute";
 
 function App() {
   const { currentUser } = useSelector((state) => state.user);
@@ -92,10 +83,6 @@ function App() {
             <Route path="/training" element={<Training />} />
             <Route path="/training/course/:id" element={<CourseDetails />} />
             {/* <Route path="/training/resources" element={<ResourceLibrary />} /> */}
-
-            {/* Mentorship Routes */}
-            <Route path="/mentorship" element={<Mentorship />} />
-            <Route path="/mentor/:mentorId" element={<MentorProfile />} />
             
             {/* Community Routes */}
             <Route path="/community" element={<Community />} />
@@ -111,21 +98,6 @@ function App() {
             <Route path="/seller/products/create" element={<CreateListing />} />
             <Route path="/seller/profile" element={<SellerProfile />} />
             <Route path="/seller/analytics" element={<Analytics />} />
-          </Route>
-
-          {/* Mentor Routes */}
-          <Route element={<MentorRoute />}>
-            <Route path="/mentor/dashboard" element={<MentorDashboard />} />
-            <Route path="/mentor/sessions" element={<MentorshipSessions />} />
-            <Route path="/mentor/profile" element={<DashProfile />} />
-          </Route>
-
-          {/* NGO Routes */}
-          <Route element={<NGORoute />}>
-            <Route path="/ngo/dashboard" element={<NGODashboard />} />
-            <Route path="/ngo/programs" element={<NGOPrograms />} />
-            <Route path="/ngo/reports" element={<NGOReports />} />
-            <Route path="/ngo/profile" element={<DashProfile />} />
           </Route>
 
           {/* Admin Routes */}

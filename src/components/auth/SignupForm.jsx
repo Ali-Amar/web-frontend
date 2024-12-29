@@ -78,12 +78,6 @@ const SignupForm = ({ language = 'en' }) => {
           <option value="seller">
             {language === 'ur' ? 'فروخت کنندہ' : 'Sell My Products'}
           </option>
-          <option value="mentor">
-            {language === 'ur' ? 'مینٹور' : 'Become a Mentor'}
-          </option>
-          <option value="ngo">
-            {language === 'ur' ? 'این جی او' : 'Register as NGO'}
-          </option>
         </Select>
       </div>
 

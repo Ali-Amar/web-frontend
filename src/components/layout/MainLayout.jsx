@@ -7,8 +7,6 @@ import Sidebar from './Sidebar';
 
 // Import role-specific sidebars
 import SellerSidebar from '../dashboard/seller/SellerSidebar';
-import MentorSidebar from '../dashboard/mentor/MentorSidebar';
-import NGOSidebar from '../dashboard/ngo/NGOSidebar';
 
 const MainLayout = ({ children }) => {
   const { currentUser } = useSelector(state => state.user);
@@ -29,10 +27,6 @@ const MainLayout = ({ children }) => {
     switch (currentUser.role) {
       case 'seller':
         return <SellerSidebar isOpen={isSidebarOpen} />;
-      case 'mentor':
-        return <MentorSidebar isOpen={isSidebarOpen} />;
-      case 'ngo':
-        return <NGOSidebar isOpen={isSidebarOpen} />;
       case 'buyer':
         return <Sidebar isOpen={isSidebarOpen} />;
       default:
@@ -48,14 +42,6 @@ const MainLayout = ({ children }) => {
       seller: {
         title: 'Seller Dashboard',
         description: 'Manage your products, track orders, and grow your business'
-      },
-      mentor: {
-        title: 'Mentor Dashboard',
-        description: 'Share your expertise and guide aspiring entrepreneurs'
-      },
-      ngo: {
-        title: 'NGO Dashboard',
-        description: 'Manage programs and support rural entrepreneurs'
       },
       buyer: {
         title: 'Welcome to WE Market',

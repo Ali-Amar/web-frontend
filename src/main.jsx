@@ -9,8 +9,6 @@ import ThemeProvider from './utils/ThemeProvider.jsx';
 import DashComments from './components/dashboard/admin/DashComments.jsx';
 import DashClientOrder from './components/dashboard/admin/DashClientOrder.jsx';
 import DashAddProduct from './components/dashboard/admin/DashAddProduct.jsx';
-import MentorDashboard from './pages/training/MentorDashboard.jsx';
-import MentorshipSessions from './pages/training/MentorshipSessions.jsx';
 import CreateListing from './pages/marketplace/CreateListing.jsx';
 import Notifications from './pages/profile/Notifications.jsx';
 import Settings from './pages/profile/Settings.jsx';

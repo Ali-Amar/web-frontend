@@ -5,8 +5,6 @@ export const API_BASE_URL = 'https://your-api-base-url.com';
 export const USER_ROLES = {
   ADMIN: 'admin',
   SELLER: 'seller',
-  MENTOR: 'mentor',
-  NGO: 'ngo',
   BUYER: 'buyer',
 };
 
