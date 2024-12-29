@@ -46,7 +46,7 @@ const DashComments = () => {
         setLoading(true);
         const queryParams = new URLSearchParams(filters);
         const response = await fetch(
-          `https://e-commerce-app-pearl-six.vercel.app/api/admin/comments?${queryParams}`,
+          `http://localhost:8080/api/admin/comments?${queryParams}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`
@@ -72,7 +72,7 @@ const DashComments = () => {
   const handleStatusChange = async (commentId, newStatus) => {
     try {
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/admin/comments/${commentId}/status`,
+        `http://localhost:8080/api/admin/comments/${commentId}/status`,
         {
           method: 'PATCH',
           headers: {
@@ -99,7 +99,7 @@ const DashComments = () => {
   const handleDelete = async (commentId) => {
     try {
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/admin/comments/${commentId}`,
+        `http://localhost:8080/api/admin/comments/${commentId}`,
         {
           method: 'DELETE',
           headers: {

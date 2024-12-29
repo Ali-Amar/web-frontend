@@ -42,7 +42,7 @@ const Notifications = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/notifications?filter=${filter}`,
+        `http://localhost:8080/api/notifications?filter=${filter}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`
@@ -65,7 +65,7 @@ const Notifications = () => {
   const markAsRead = async (notificationId) => {
     try {
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/notifications/${notificationId}/read`,
+        `http://localhost:8080/api/notifications/${notificationId}/read`,
         {
           method: 'PATCH',
           headers: {
@@ -90,7 +90,7 @@ const Notifications = () => {
   const markAllAsRead = async () => {
     try {
       const response = await fetch(
-        'https://e-commerce-app-pearl-six.vercel.app/api/notifications/mark-all-read',
+        'http://localhost:8080/api/notifications/mark-all-read',
         {
           method: 'PATCH',
           headers: {
@@ -113,7 +113,7 @@ const Notifications = () => {
   const deleteNotification = async (notificationId) => {
     try {
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/notifications/${notificationId}`,
+        `http://localhost:8080/api/notifications/${notificationId}`,
         {
           method: 'DELETE',
           headers: {

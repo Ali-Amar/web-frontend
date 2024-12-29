@@ -32,11 +32,14 @@ const Marketplace = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [filters, setFilters] = useState({
     category: '',
-    minPrice: '',
-    maxPrice: '',
-    region: '',
-    craftType: '',
-    sortBy: 'latest'
+    subCategory: '',
+    priceRange: [0, 10000],
+    rating: 0,
+    location: '',
+    availability: false,
+    shipping: [],
+    certifications: [],
+    sortBy: 'popularity'
   });
 
   // Fetch products and categories
@@ -45,12 +48,12 @@ const Marketplace = () => {
       setIsLoading(true);
       try {
         // Fetch products
-        const productsResponse = await fetch('/api/products?' + new URLSearchParams(filters));
+        const productsResponse = await fetch('/products?' + new URLSearchParams(filters));
         const productsData = await productsResponse.json();
         setProducts(productsData.products);
 
         // Fetch categories
-        const categoriesResponse = await fetch('/api/categories');
+        const categoriesResponse = await fetch('/categories');
         const categoriesData = await categoriesResponse.json();
         setCategories(categoriesData.categories);
       } catch (error) {

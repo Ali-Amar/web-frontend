@@ -22,7 +22,7 @@ const MentorshipRequest = ({ mentor, onSubmit, onCancel }) => {
     e.preventDefault();
     try {
       // Make API call to submit mentorship request
-      const response = await fetch(`https://e-commerce-app-pearl-six.vercel.app/api/mentorship-requests`, {
+      const response = await fetch(`http://localhost:8080/api/mentorship-requests`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

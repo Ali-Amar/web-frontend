@@ -38,7 +38,7 @@ const DashTransaction = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const response = await fetch("https://e-commerce-app-pearl-six.vercel.app/api/order/getAllOrders", {
+      const response = await fetch("http://localhost:8080/api/order/getAllOrders", {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }

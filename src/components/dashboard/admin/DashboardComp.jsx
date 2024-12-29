@@ -40,7 +40,7 @@ const DashboardComp = () => {
         setLoading(true);
         
         // Fetch dashboard statistics
-        const statsResponse = await fetch("https://e-commerce-app-pearl-six.vercel.app/api/dashboard/stats", {
+        const statsResponse = await fetch("http://localhost:8080/api/dashboard/stats", {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
@@ -52,7 +52,7 @@ const DashboardComp = () => {
         }
 
         // Fetch recent activities
-        const activitiesResponse = await fetch("https://e-commerce-app-pearl-six.vercel.app/api/dashboard/activities", {
+        const activitiesResponse = await fetch("http://localhost:8080/api/dashboard/activities", {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
@@ -64,7 +64,7 @@ const DashboardComp = () => {
         }
 
         // Fetch upcoming events
-        const eventsResponse = await fetch("https://e-commerce-app-pearl-six.vercel.app/api/dashboard/events", {
+        const eventsResponse = await fetch("http://localhost:8080/api/dashboard/events", {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },

@@ -42,7 +42,7 @@ const MentorProfile = () => {
     const fetchMentorProfile = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`https://e-commerce-app-pearl-six.vercel.app/api/mentors/${mentorId}`);
+        const response = await fetch(`http://localhost:8080/api/mentors/${mentorId}`);
         if (!response.ok) throw new Error('Failed to fetch mentor profile');
         const data = await response.json();
         setMentor(data.mentor);

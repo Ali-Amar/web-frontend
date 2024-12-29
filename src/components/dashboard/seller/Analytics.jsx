@@ -56,7 +56,7 @@ const Analytics = () => {
   const fetchAnalytics = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`https://e-commerce-app-pearl-six.vercel.app/api/analytics/sales?timeRange=${timeRange}`, {
+      const response = await fetch(`http://localhost:8080/api/analytics/sales?timeRange=${timeRange}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }

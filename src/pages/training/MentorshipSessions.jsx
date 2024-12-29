@@ -65,7 +65,7 @@ const MentorshipSessions = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          'https://e-commerce-app-pearl-six.vercel.app/api/mentor/sessions',
+          'http://localhost:8080/api/mentor/sessions',
           {
             headers: {
               Authorization: `Bearer ${currentUser.token}`
@@ -94,7 +94,7 @@ const MentorshipSessions = () => {
   const handleStatusUpdate = async (sessionId, newStatus) => {
     try {
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/mentor/sessions/${sessionId}/status`,
+        `http://localhost:8080/api/mentor/sessions/${sessionId}/status`,
         {
           method: 'PATCH',
           headers: {
@@ -129,7 +129,7 @@ const MentorshipSessions = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/mentor/sessions/${selectedSession._id}/feedback`,
+        `http://localhost:8080/api/mentor/sessions/${selectedSession._id}/feedback`,
         {
           method: 'POST',
           headers: {

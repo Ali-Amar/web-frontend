@@ -45,7 +45,7 @@ const DashUsers = () => {
         setLoading(true);
         const queryParams = new URLSearchParams(filters);
         const response = await fetch(
-          `https://e-commerce-app-pearl-six.vercel.app/api/admin/users?${queryParams}`,
+          `http://localhost:8080/api/admin/users?${queryParams}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`
@@ -71,7 +71,7 @@ const DashUsers = () => {
   const handleStatusChange = async (userId, newStatus) => {
     try {
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/admin/users/${userId}/status`,
+        `http://localhost:8080/api/admin/users/${userId}/status`,
         {
           method: 'PATCH',
           headers: {
@@ -98,7 +98,7 @@ const DashUsers = () => {
   const handleDelete = async (userId) => {
     try {
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/admin/users/${userId}`,
+        `http://localhost:8080/api/admin/users/${userId}`,
         {
           method: 'DELETE',
           headers: {

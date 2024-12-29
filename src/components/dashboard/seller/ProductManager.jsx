@@ -80,7 +80,7 @@ const ProductManager = () => {
       });
 
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/products?${queryParams}`,
+        `http://localhost:8080/api/products?${queryParams}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`
@@ -139,8 +139,8 @@ const ProductManager = () => {
       });
 
       const url = editMode 
-        ? `https://e-commerce-app-pearl-six.vercel.app/api/products/${selectedProduct._id}`
-        : 'https://e-commerce-app-pearl-six.vercel.app/api/products';
+        ? `http://localhost:8080/api/products/${selectedProduct._id}`
+        : 'http://localhost:8080/api/products';
 
       const response = await fetch(url, {
         method: editMode ? 'PATCH' : 'POST',
@@ -169,7 +169,7 @@ const ProductManager = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/products/${selectedProduct._id}`,
+        `http://localhost:8080/api/products/${selectedProduct._id}`,
         {
           method: 'DELETE',
           headers: {

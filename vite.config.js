@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://e-commerce-app-pearl-six.vercel.app',
+        target: 'http://localhost:8080/api',
         secure: false,
       },
     },

@@ -103,7 +103,7 @@ const Checkout = () => {
         }
       };
 
-      const response = await fetch('https://e-commerce-app-pearl-six.vercel.app/api/orders', {
+      const response = await fetch('http://localhost:8080/api/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

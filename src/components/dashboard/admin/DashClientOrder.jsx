@@ -48,7 +48,7 @@ const DashClientOrder = () => {
         setLoading(true);
         const queryParams = new URLSearchParams(filters);
         const response = await fetch(
-          `https://e-commerce-app-pearl-six.vercel.app/api/admin/orders?${queryParams}`,
+          `http://localhost:8080/api/admin/orders?${queryParams}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`
@@ -74,7 +74,7 @@ const DashClientOrder = () => {
   const handleStatusUpdate = async (orderId, newStatus) => {
     try {
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/admin/orders/${orderId}/status`,
+        `http://localhost:8080/api/admin/orders/${orderId}/status`,
         {
           method: 'PATCH',
           headers: {

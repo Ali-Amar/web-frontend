@@ -62,7 +62,7 @@ const Settings = () => {
   const fetchUserSettings = async () => {
     try {
       const response = await fetch(
-        'https://e-commerce-app-pearl-six.vercel.app/api/users/settings',
+        'http://localhost:8080/api/users/settings',
         {
           headers: {
             Authorization: `Bearer ${accessToken}`
@@ -84,7 +84,7 @@ const Settings = () => {
   const handleSettingChange = async (setting, value) => {
     try {
       const response = await fetch(
-        'https://e-commerce-app-pearl-six.vercel.app/api/users/settings',
+        'http://localhost:8080/api/users/settings',
         {
           method: 'PATCH',
           headers: {
@@ -122,7 +122,7 @@ const Settings = () => {
     try {
       dispatch(updateStart());
       const response = await fetch(
-        'https://e-commerce-app-pearl-six.vercel.app/api/users/change-password',
+        'http://localhost:8080/api/users/change-password',
         {
           method: 'POST',
           headers: {
@@ -158,7 +158,7 @@ const Settings = () => {
 
     try {
       const response = await fetch(
-        'https://e-commerce-app-pearl-six.vercel.app/api/users/delete-account',
+        'http://localhost:8080/api/users/delete-account',
         {
           method: 'DELETE',
           headers: {

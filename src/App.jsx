@@ -26,7 +26,7 @@ import CreateListing from "./pages/marketplace/CreateListing";
 // Training & Mentorship
 import Training from "./pages/training/Training";
 import CourseDetails from "./pages/training/CourseDetails";
-import ResourceLibrary from "./pages/training/ResourceLibrary";
+// import ResourceLibrary from "./pages/training/ResourceLibrary";
 import Mentorship from "./pages/training/Mentorship";
 import MentorProfile from "./pages/training/MentorProfile";
 import MentorDashboard from "./pages/training/MentorDashboard";
@@ -91,7 +91,7 @@ function App() {
             {/* Training Routes */}
             <Route path="/training" element={<Training />} />
             <Route path="/training/course/:id" element={<CourseDetails />} />
-            <Route path="/training/resources" element={<ResourceLibrary />} />
+            {/* <Route path="/training/resources" element={<ResourceLibrary />} /> */}
 
             {/* Mentorship Routes */}
             <Route path="/mentorship" element={<Mentorship />} />

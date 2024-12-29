@@ -37,6 +37,8 @@ const CategoryFilter = ({
     sortBy: 'popularity'
   });
 
+  console.log(filters);
+
   const [isPriceCustom, setIsPriceCustom] = useState(false);
 
   const priceRanges = [

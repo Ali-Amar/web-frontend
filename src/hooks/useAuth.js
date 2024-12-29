@@ -19,7 +19,7 @@ const useAuth = () => {
       if (user) {
         try {
           // Verify token with backend
-          const response = await fetch("https://e-commerce-app-pearl-six.vercel.app/api/users/verify", {
+          const response = await fetch("http://localhost:8080/api/users/verify", {
             headers: {
               Authorization: `Bearer ${await user.getIdToken()}`
             }
@@ -44,7 +44,7 @@ const useAuth = () => {
   const signIn = async (email, password) => {
     try {
       dispatch(signInStart());
-      const response = await fetch("https://e-commerce-app-pearl-six.vercel.app/api/users/login", {
+      const response = await fetch("http://localhost:8080/api/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +69,7 @@ const useAuth = () => {
   const signUp = async (userData) => {
     try {
       dispatch(signInStart());
-      const response = await fetch("https://e-commerce-app-pearl-six.vercel.app/api/users/register", {
+      const response = await fetch("http://localhost:8080/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

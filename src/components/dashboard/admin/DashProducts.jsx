@@ -63,7 +63,7 @@ const DashProducts = () => {
       setLoading(true);
       const queryParams = new URLSearchParams(filters);
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/products?${queryParams}`,
+        `http://localhost:8080/api/products?${queryParams}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`
@@ -85,7 +85,7 @@ const DashProducts = () => {
   const handleDelete = async (productId) => {
     try {
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/products/${productId}`,
+        `http://localhost:8080/api/products/${productId}`,
         {
           method: 'DELETE',
           headers: {

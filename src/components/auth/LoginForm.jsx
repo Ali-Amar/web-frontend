@@ -3,14 +3,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TextInput, Button, Alert } from 'flowbite-react';
 import { signInStart, signInSuccess, signInFailure } from '../../features/auth/authSlice';
 import OAuth from '../../utils/OAuth';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = ({ language = 'en' }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
+
+  const navigate = useNavigate(); 
   
-  const { loading, error } = useSelector((state) => state.auth);
+  const { loading, error } = useSelector((state) => state.auth || {});
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -21,7 +24,7 @@ const LoginForm = ({ language = 'en' }) => {
     e.preventDefault();
     try {
       dispatch(signInStart());
-      const res = await fetch("https://e-commerce-app-pearl-six.vercel.app/api/users/login", {
+      const res = await fetch("http://localhost:8080/api/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,9 +37,11 @@ const LoginForm = ({ language = 'en' }) => {
         return;
       }
 
-      const { user, accessToken } = data.data;
+      const { user, accessToken } = data;
       dispatch(signInSuccess({ user, accessToken }));
+      navigate('/')
     } catch (error) {
+      console.log(error) 
       dispatch(signInFailure(error));
     }
   };

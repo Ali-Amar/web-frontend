@@ -32,7 +32,7 @@ const useProducts = () => {
       });
       
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/products?${queryParams}`,
+        `http://localhost:8080/api/products?${queryParams}`,
         {
           headers: currentUser ? {
             Authorization: `Bearer ${accessToken}`
@@ -72,7 +72,7 @@ const useProducts = () => {
       });
 
       const response = await fetch(
-        "https://e-commerce-app-pearl-six.vercel.app/api/products",
+        "http://localhost:8080/api/products",
         {
           method: "POST",
           headers: {
@@ -112,7 +112,7 @@ const useProducts = () => {
       });
 
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/products/${productId}`,
+        `http://localhost:8080/api/products/${productId}`,
         {
           method: "PATCH",
           headers: {
@@ -138,7 +138,7 @@ const useProducts = () => {
     try {
       dispatch(deleteProductStart());
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/products/${productId}`,
+        `http://localhost:8080/api/products/${productId}`,
         {
           method: "DELETE",
           headers: {
@@ -175,7 +175,7 @@ const useProducts = () => {
   const getCategories = async () => {
     try {
       const response = await fetch(
-        "https://e-commerce-app-pearl-six.vercel.app/api/products/categories"
+        "http://localhost:8080/api/products/categories"
       );
       const data = await response.json();
       return data.categories;

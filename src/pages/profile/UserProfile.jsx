@@ -56,7 +56,7 @@ const UserProfile = () => {
   const fetchUserStats = async () => {
     try {
       const response = await fetch(
-        'https://e-commerce-app-pearl-six.vercel.app/api/users/stats',
+        'http://localhost:8080/api/users/stats',
         {
           headers: {
             Authorization: `Bearer ${accessToken}`
@@ -90,7 +90,7 @@ const UserProfile = () => {
       formData.append('avatar', file);
 
       const response = await fetch(
-        'https://e-commerce-app-pearl-six.vercel.app/api/users/avatar',
+        'http://localhost:8080/api/users/avatar',
         {
           method: 'PATCH',
           headers: {
@@ -116,7 +116,7 @@ const UserProfile = () => {
     try {
       dispatch(updateStart());
       const response = await fetch(
-        'https://e-commerce-app-pearl-six.vercel.app/api/users/update-account',
+        'http://localhost:8080/api/users/update-account',
         {
           method: 'PATCH',
           headers: {

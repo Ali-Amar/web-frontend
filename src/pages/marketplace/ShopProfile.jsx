@@ -22,7 +22,7 @@ import {
   HiUserGroup,
   HiClock,
   HiGlobe,
-  HiCertificate,
+  // HiCertificate,
   HiTrendingUp
 } from 'react-icons/hi';
 
@@ -282,7 +282,7 @@ const ShopProfile = () => {
                         key={index}
                         className="flex items-center gap-2 text-gray-600 dark:text-gray-400"
                       >
-                        <HiCertificate className="w-5 h-5 text-purple-500" />
+                        <HiTrendingUp className="w-5 h-5 text-purple-500" />
                         {language === 'ur' ? craft.nameUrdu : craft.name}
                       </li>
                     ))}

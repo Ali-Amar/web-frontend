@@ -66,7 +66,7 @@ const Settings = () => {
 
   const fetchSettings = async () => {
     try {
-      const response = await fetch('https://e-commerce-app-pearl-six.vercel.app/api/settings', {
+      const response = await fetch('http://localhost:8080/api/settings', {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }
@@ -85,7 +85,7 @@ const Settings = () => {
 
   const handleSettingsUpdate = async (section, updates) => {
     try {
-      const response = await fetch('https://e-commerce-app-pearl-six.vercel.app/api/settings', {
+      const response = await fetch('http://localhost:8080/api/settings', {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

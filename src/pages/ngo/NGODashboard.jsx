@@ -48,7 +48,7 @@ const NGODashboard = () => {
         setLoading(true);
         
         // Fetch NGO statistics
-        const statsResponse = await fetch("https://e-commerce-app-pearl-six.vercel.app/api/ngo/stats", {
+        const statsResponse = await fetch("http://localhost:8080/api/ngo/stats", {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
@@ -60,7 +60,7 @@ const NGODashboard = () => {
         }
 
         // Fetch recent activities
-        const activitiesResponse = await fetch("https://e-commerce-app-pearl-six.vercel.app/api/ngo/activities", {
+        const activitiesResponse = await fetch("http://localhost:8080/api/ngo/activities", {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
@@ -72,7 +72,7 @@ const NGODashboard = () => {
         }
 
         // Fetch upcoming events
-        const eventsResponse = await fetch("https://e-commerce-app-pearl-six.vercel.app/api/ngo/events", {
+        const eventsResponse = await fetch("http://localhost:8080/api/ngo/events", {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },

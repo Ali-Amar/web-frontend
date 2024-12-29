@@ -15,7 +15,7 @@ export default function OAuth() {
             const auth = getAuth(app);
 
             const result = await signInWithPopup(auth, provider);;
-            const res = await fetch('https://e-commerce-app-pearl-six.vercel.app/api/users/google', {
+            const res = await fetch('http://localhost:8080/api/users/google', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

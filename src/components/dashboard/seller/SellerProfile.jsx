@@ -68,7 +68,7 @@ const SellerProfile = () => {
 
       try {
         dispatch(updateStart());
-        const response = await fetch('https://e-commerce-app-pearl-six.vercel.app/api/users/avatar', {
+        const response = await fetch('http://localhost:8080/api/users/avatar', {
           method: 'PATCH',
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -93,7 +93,7 @@ const SellerProfile = () => {
     e.preventDefault();
     try {
       dispatch(updateStart());
-      const response = await fetch('https://e-commerce-app-pearl-six.vercel.app/api/users/update-account', {
+      const response = await fetch('http://localhost:8080/api/users/update-account', {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

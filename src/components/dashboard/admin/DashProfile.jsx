@@ -70,7 +70,7 @@ const DashProfile = () => {
       formData.append('avatar', file);
 
       const response = await fetch(
-        'https://e-commerce-app-pearl-six.vercel.app/api/users/avatar',
+        'http://localhost:8080/api/users/avatar',
         {
           method: 'PATCH',
           headers: {
@@ -97,7 +97,7 @@ const DashProfile = () => {
     try {
       dispatch(updateStart());
       const response = await fetch(
-        'https://e-commerce-app-pearl-six.vercel.app/api/users/update-account',
+        'http://localhost:8080/api/users/update-account',
         {
           method: 'PATCH',
           headers: {

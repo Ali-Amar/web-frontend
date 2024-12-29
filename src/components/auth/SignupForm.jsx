@@ -30,7 +30,7 @@ const SignupForm = ({ language = 'en' }) => {
     try {
       setLoading(true);
       setError(null);
-      const res = await fetch("https://e-commerce-app-pearl-six.vercel.app/api/users/register", {
+      const res = await fetch("http://localhost:8080/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +40,7 @@ const SignupForm = ({ language = 'en' }) => {
       const data = await res.json();
       
       if (data.success === false) {
-        setError(data.message);
+        setError(data.message || "Registration failed");
         return;
       }
       

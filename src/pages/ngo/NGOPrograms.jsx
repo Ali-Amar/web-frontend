@@ -76,7 +76,7 @@ const NGOPrograms = () => {
       setLoading(true);
       const queryParams = new URLSearchParams(filters);
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/ngo/programs?${queryParams}`,
+        `http://localhost:8080/api/ngo/programs?${queryParams}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`
@@ -99,7 +99,7 @@ const NGOPrograms = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        'https://e-commerce-app-pearl-six.vercel.app/api/ngo/programs',
+        'http://localhost:8080/api/ngo/programs',
         {
           method: 'POST',
           headers: {
@@ -136,7 +136,7 @@ const NGOPrograms = () => {
   const handleDeleteProgram = async (programId) => {
     try {
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/ngo/programs/${programId}`,
+        `http://localhost:8080/api/ngo/programs/${programId}`,
         {
           method: 'DELETE',
           headers: {

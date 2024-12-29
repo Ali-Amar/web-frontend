@@ -5,7 +5,7 @@ const PayButton = ({ cartItems }) => {
   const { _id } = useSelector((state) => state.user.currentUser);
   //console.log(cartItems);
   const handleCheckout = () => {
-    fetch("https://e-commerce-app-pearl-six.vercel.app/api/stripe/create-checkout-session", {
+    fetch("http://localhost:8080/api/stripe/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

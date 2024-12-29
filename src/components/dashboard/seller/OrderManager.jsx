@@ -65,7 +65,7 @@ const OrderManager = () => {
       });
       
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/orders?${queryParams}`,
+        `http://localhost:8080/api/orders?${queryParams}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`
@@ -88,7 +88,7 @@ const OrderManager = () => {
   const handleStatusUpdate = async (orderId, newStatus) => {
     try {
       const response = await fetch(
-        `https://e-commerce-app-pearl-six.vercel.app/api/orders/${orderId}/status`,
+        `http://localhost:8080/api/orders/${orderId}/status`,
         {
           method: 'PATCH',
           headers: {

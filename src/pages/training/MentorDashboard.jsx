@@ -43,7 +43,7 @@ const MentorDashboard = () => {
     const fetchDashboardData = async () => {
       try {
         setLoading(true);
-        const response = await fetch('https://e-commerce-app-pearl-six.vercel.app/api/mentor/dashboard', {
+        const response = await fetch('http://localhost:8080/api/mentor/dashboard', {
           headers: {
             Authorization: `Bearer ${currentUser.token}`
           }
