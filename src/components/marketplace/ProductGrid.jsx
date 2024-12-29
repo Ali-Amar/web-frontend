@@ -16,7 +16,7 @@ const ProductGrid = ({
   const {language} = useSelector(state => state.language) || 'en';
   const [layout, setLayout] = useState('grid'); // 'grid' or 'list'
 
-  if (isLoading && !products.length) {
+  if (isLoading && (!products || !products.length)) {
     return (
       <div className="flex justify-center items-center h-64">
         <Spinner size="xl" />
@@ -24,7 +24,7 @@ const ProductGrid = ({
     );
   }
 
-  if (!products.length) {
+  if (!products || !products.length) {
     return (
       <div className="text-center py-12">
         <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
