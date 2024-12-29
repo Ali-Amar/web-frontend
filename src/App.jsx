@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Dashboard from "./pages/Dashboard";
 import About from "./pages/About";
+import Support from "./pages/Support";
 
 // Profile Pages
 import UserProfile from "./pages/profile/UserProfile";
@@ -65,6 +66,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/support" element={<Support />} />
 
           {/* Protected Routes */}
           <Route element={<PrivateRoute />}>

@@ -148,22 +148,22 @@ const Footer = () => {
             <h3 className="footer-heading">{t.support.title}</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/help" className="footer-link">
+                <Link to="/Support" className="footer-link">
                   {t.support.help}
                 </Link>
               </li>
               <li>
-                <Link to="/faq" className="footer-link">
+                <Link to="/Support" className="footer-link">
                   {t.support.faq}
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="footer-link">
+                <Link to="/Support" className="footer-link">
                   {t.support.contact}
                 </Link>
               </li>
               <li>
-                <Link to="/safety-tips" className="footer-link">
+                <Link to="/Support" className="footer-link">
                   {t.support.safety}
                 </Link>
               </li>
