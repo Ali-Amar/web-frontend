@@ -37,7 +37,7 @@ const Product = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
   const { currentUser } = useSelector(state => state.user);
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);

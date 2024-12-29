@@ -15,7 +15,7 @@ import { updateStart, updateSuccess, updateFailure } from '../../../features/aut
 
 const SellerProfile = () => {
   const { currentUser, loading, error, accessToken } = useSelector((state) => state.user);
-  const language = useSelector((state) => state.language) || 'en';
+  const { language } = useSelector((state) => state.language) || 'en';
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({

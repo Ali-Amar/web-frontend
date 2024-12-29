@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
-import { 
+import {
   HiHome,
   HiShoppingBag,
   HiAcademicCap,
@@ -14,13 +14,13 @@ import {
 
 const Sidebar = ({ isOpen }) => {
   const { currentUser } = useSelector(state => state.user);
+  const { language } = useSelector(state => state.language);
   const location = useLocation();
 
-  // Navigation items based on user role
   const getNavigationItems = () => {
     const baseItems = [
       {
-        name: 'Home',
+        name: language === 'ur' ? 'صفحہ اول' : 'Home',
         icon: HiHome,
         path: '/',
         showFor: ['buyer', 'seller', 'mentor', 'ngo']
@@ -29,25 +29,25 @@ const Sidebar = ({ isOpen }) => {
 
     const buyerItems = [
       {
-        name: 'Marketplace',
+        name: language === 'ur' ? 'مارکیٹ پلیس' : 'Marketplace',
         icon: HiShoppingBag,
         path: '/marketplace',
         showFor: ['buyer']
       },
       {
-        name: 'Training',
+        name: language === 'ur' ? 'تربیت' : 'Training',
         icon: HiAcademicCap,
         path: '/training',
         showFor: ['buyer']
       },
       {
-        name: 'Mentorship',
+        name: language === 'ur' ? 'رہنمائی' : 'Mentorship',
         icon: HiUserGroup,
         path: '/mentorship',
         showFor: ['buyer']
       },
       {
-        name: 'Saved Items',
+        name: language === 'ur' ? 'محفوظ اشیاء' : 'Saved Items',
         icon: HiHeart,
         path: '/saved',
         showFor: ['buyer']
@@ -56,19 +56,19 @@ const Sidebar = ({ isOpen }) => {
 
     const commonItems = [
       {
-        name: 'Resources',
+        name: language === 'ur' ? 'وسائل' : 'Resources',
         icon: HiBookOpen,
         path: '/resources',
         showFor: ['buyer', 'seller', 'mentor']
       },
       {
-        name: 'Messages',
+        name: language === 'ur' ? 'پیغامات' : 'Messages',
         icon: HiChatAlt2,
         path: '/messages',
         showFor: ['buyer', 'seller', 'mentor', 'ngo']
       },
       {
-        name: 'Settings',
+        name: language === 'ur' ? 'ترتیبات' : 'Settings',
         icon: HiCog,
         path: '/settings',
         showFor: ['buyer', 'seller', 'mentor', 'ngo']
@@ -93,9 +93,9 @@ const Sidebar = ({ isOpen }) => {
           <div className="flex items-center space-x-3 mb-3">
             <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700">
               {currentUser.avatar ? (
-                <img 
-                  src={currentUser.avatar} 
-                  alt="Profile" 
+                <img
+                  src={currentUser.avatar}
+                  alt={language === 'ur' ? 'پروفائل' : 'Profile'}
                   className="w-full h-full rounded-full object-cover"
                 />
               ) : (
@@ -109,7 +109,7 @@ const Sidebar = ({ isOpen }) => {
                 {currentUser.username}
               </h3>
               <p className="text-xs text-gray-500 dark:text-gray-400 capitalize">
-                {currentUser.role}
+                {language === 'ur' ? currentUser.roleUrdu : currentUser.role}
               </p>
             </div>
           </div>
@@ -148,20 +148,20 @@ const Sidebar = ({ isOpen }) => {
       {/* Quick Actions */}
       <div className="mt-6 px-6 py-4 border-t dark:border-gray-700">
         <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-3">
-          Quick Actions
+          {language === 'ur' ? 'فوری کاروائیاں' : 'Quick Actions'}
         </h4>
         <div className="space-y-2">
           <Link
             to="/help"
             className="block text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
           >
-            Help Center
+            {language === 'ur' ? 'مدد مرکز' : 'Help Center'}
           </Link>
           <Link
             to="/feedback"
             className="block text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
           >
-            Give Feedback
+            {language === 'ur' ? 'رائے دیں' : 'Give Feedback'}
           </Link>
         </div>
       </div>

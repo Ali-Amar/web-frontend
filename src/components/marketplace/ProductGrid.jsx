@@ -13,7 +13,7 @@ const ProductGrid = ({
   onAddToWishlist,
   onFilterOpen 
 }) => {
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
   const [layout, setLayout] = useState('grid'); // 'grid' or 'list'
 
   if (isLoading && !products.length) {

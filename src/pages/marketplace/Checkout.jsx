@@ -28,7 +28,7 @@ const PAYMENT_METHODS = [
 const Checkout = () => {
   const navigate = useNavigate();
   const { currentUser, accessToken } = useSelector((state) => state.user);
-  const language = useSelector((state) => state.language) || 'en';
+  const { language } = useSelector((state) => state.language) || 'en';
 
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);

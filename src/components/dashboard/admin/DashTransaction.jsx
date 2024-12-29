@@ -19,7 +19,7 @@ import {
 
 const DashTransaction = () => {
   const { currentUser, accessToken } = useSelector((state) => state.user);
-  const language = useSelector((state) => state.language) || 'en';
+  const { language } = useSelector((state) => state.language) || 'en';
   
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);

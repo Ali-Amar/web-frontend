@@ -28,7 +28,7 @@ import { updateStart, updateSuccess, updateFailure } from '../../features/auth/a
 const UserProfile = () => {
   const dispatch = useDispatch();
   const { currentUser, loading, error, accessToken } = useSelector(state => state.user);
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   const [isEditing, setIsEditing] = useState(false);
   const [updateSuccess, setUpdateSuccess] = useState(false);

@@ -22,7 +22,7 @@ import {
 } from 'react-icons/hi';
 
 const ResourceLibrary = ({ resources, isLoading, onDownload }) => {
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
   const { currentUser } = useSelector(state => state.user);
   const [search, setSearch] = useState('');
   const [activeTab, setActiveTab] = useState('all');

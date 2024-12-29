@@ -10,7 +10,7 @@ import useProducts from '../../hooks/useProducts';
 const CreateListing = () => {
   const navigate = useNavigate();
   const { currentUser } = useSelector((state) => state.user);
-  const language = useSelector((state) => state.language) || 'en';
+  const { language } = useSelector((state) => state.language) || 'en';
   const { createProduct } = useProducts();
 
   const [categories, setCategories] = useState([]);

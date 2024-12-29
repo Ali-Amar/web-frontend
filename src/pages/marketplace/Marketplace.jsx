@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { 
-  Button, 
-  Spinner, 
+import {
+  Button,
+  Spinner,
   Card,
   TextInput,
-  Alert 
+  Alert
 } from 'flowbite-react';
-import { 
-  HiPlus, 
+import {
+  HiPlus,
   HiSearch,
   HiUserGroup,
   HiCurrencyRupee,
@@ -23,8 +23,8 @@ import ProductGrid from '../../components/marketplace/ProductGrid';
 
 const Marketplace = () => {
   const { currentUser } = useSelector(state => state.user);
-  const language = useSelector(state => state.language) || 'en';
-  
+  const { language } = useSelector(state => state.language) || 'en';
+
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -151,7 +151,7 @@ const Marketplace = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-4">
-              {language === 'ur' 
+              {language === 'ur'
                 ? 'پاکستانی خواتین کی دستکاری'
                 : 'Pakistani Women Artisans Marketplace'}
             </h1>
@@ -255,13 +255,13 @@ const Marketplace = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredCategories.map((category, index) => (
-              <Link 
+              <Link
                 key={index}
                 to={`/marketplace?category=${category.name}`}
                 className="relative rounded-lg overflow-hidden group cursor-pointer"
               >
                 <div className="aspect-square">
-                  <img 
+                  <img
                     src={category.image}
                     alt={language === 'ur' ? category.nameUrdu : category.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -288,7 +288,7 @@ const Marketplace = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              {language === 'ur' 
+              {language === 'ur'
                 ? 'کیا آپ کو مدد کی ضرورت ہے؟'
                 : 'Need Help Getting Started?'}
             </h2>
@@ -322,7 +322,7 @@ const Marketplace = () => {
         <section className="bg-gradient-to-r from-purple-600 to-blue-600 py-16">
           <div className="container mx-auto px-4 text-center text-white">
             <h2 className="text-3xl font-bold mb-4">
-              {language === 'ur' 
+              {language === 'ur'
                 ? 'کیا آپ اپنی مصنوعات فروخت کرنا چاہتی ہیں؟'
                 : 'Want to Sell Your Products?'}
             </h2>

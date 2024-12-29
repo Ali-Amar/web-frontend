@@ -4,6 +4,7 @@ const initialState = {
   currentUser: null,
   loading: false,
   error: false,
+  language: 'en',
 };
 
 const authSlice = createSlice({
@@ -59,6 +60,10 @@ const authSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+    updateLanguage: (state, action) => {
+      state.loading = false;
+      state.language = action.payload;
+    }
   },
 });
 
@@ -72,7 +77,8 @@ export const {
   updateFailure,
   deleteUserStart,
   deleteUserSuccess,
-  deleteUserFailure
+  deleteUserFailure, 
+  updateLanguage
 } = authSlice.actions;
 
 export default authSlice.reducer;

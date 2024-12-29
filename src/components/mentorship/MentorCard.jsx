@@ -25,7 +25,7 @@ const MentorCard = ({
   showDetailedStats = false,
   className = ''
 }) => {
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   const {
     id,

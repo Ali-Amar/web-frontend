@@ -29,7 +29,7 @@ const Settings = () => {
   const dispatch = useDispatch();
   const { currentUser, loading, error, accessToken } = useSelector(state => state.user);
   const { theme } = useSelector(state => state.theme);
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);

@@ -32,7 +32,7 @@ import {
 
 const Analytics = () => {
   const { currentUser, accessToken } = useSelector(state => state.user);
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
   
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

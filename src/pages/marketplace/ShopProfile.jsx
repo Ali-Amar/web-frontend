@@ -31,7 +31,7 @@ import LoadingSpinner from '../../components/common/LoadingSpinner';
 
 const ShopProfile = () => {
   const { shopId } = useParams();
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
   const { currentUser } = useSelector(state => state.user);
   
   const [shopData, setShopData] = useState(null);

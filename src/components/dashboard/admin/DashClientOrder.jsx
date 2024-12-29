@@ -26,7 +26,7 @@ import {
 } from 'react-icons/hi';
 
 const DashClientOrder = () => {
-  const language = useSelector((state) => state.language) || 'en';
+  const { language } = useSelector((state) => state.language) || 'en';
   const { accessToken } = useSelector((state) => state.user);
 
   const [orders, setOrders] = useState([]);

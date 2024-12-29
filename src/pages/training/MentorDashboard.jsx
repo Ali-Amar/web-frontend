@@ -23,7 +23,7 @@ import {
 import { Link } from 'react-router-dom';
 
 const MentorDashboard = () => {
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
   const { currentUser } = useSelector(state => state.user);
 
   const [stats, setStats] = useState({

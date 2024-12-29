@@ -21,15 +21,16 @@ import {
 } from "react-icons/hi";
 import { toggleTheme } from "../../features/theme/themeSlice";
 import { signOut } from "../../features/auth/authSlice";
+import { setLanguage } from "../../features/languageSlice";
 
 const Header = ({ onToggleSidebar }) => {
   const { currentUser } = useSelector((state) => state.user);
   const { theme } = useSelector((state) => state.theme);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [language, setLanguage] = useState('en');
+  const { language } = useSelector((state) => state.language);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
 
   const handleSignOut = async () => {
     try {
@@ -41,8 +42,7 @@ const Header = ({ onToggleSidebar }) => {
   };
 
   const handleLanguageChange = (lang) => {
-    setLanguage(lang);
-    // Additional language change logic will be implemented
+    dispatch(setLanguage(lang));
   };
 
   const userMenuItems = [
@@ -169,9 +169,9 @@ const Header = ({ onToggleSidebar }) => {
             {/* Notifications */}
             {currentUser && (
               <>
-                <Tooltip content="Notifications">
+                {/* <Tooltip content="Notifications">
                   {notificationButton}
-                </Tooltip>
+                </Tooltip> */}
 
                 {currentUser.role === 'buyer' && (
                   <Tooltip content="Shopping Cart">

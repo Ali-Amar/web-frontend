@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Label, TextInput, Textarea, Button } from 'flowbite-react';
 
 const MentorshipRequest = ({ mentor, onSubmit, onCancel }) => {
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
   const [formData, setFormData] = useState({
     message: '',
     sessionType: mentor.sessionTypes[0]?.id || '',

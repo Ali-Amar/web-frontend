@@ -24,7 +24,7 @@ import {
 
 const DashProducts = () => {
   const { currentUser, accessToken } = useSelector((state) => state.user);
-  const language = useSelector((state) => state.language) || 'en';
+  const { language } = useSelector((state) => state.language) || 'en';
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);

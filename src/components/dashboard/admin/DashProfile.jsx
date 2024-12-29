@@ -28,7 +28,7 @@ import {
 const DashProfile = () => {
   const dispatch = useDispatch();
   const { currentUser, loading, error, accessToken } = useSelector((state) => state.user);
-  const language = useSelector((state) => state.language) || 'en';
+  const { language } = useSelector((state) => state.language)
   
   const [formData, setFormData] = useState({
     username: currentUser?.username || '',

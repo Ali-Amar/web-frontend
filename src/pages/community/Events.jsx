@@ -30,7 +30,7 @@ import LoadingSpinner from '../../components/common/LoadingSpinner';
 const Events = () => {
   const navigate = useNavigate();
   const { currentUser } = useSelector(state => state.user);
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   // State for events list and loading
   const [events, setEvents] = useState([]);

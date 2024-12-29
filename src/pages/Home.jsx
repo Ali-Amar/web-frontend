@@ -13,7 +13,7 @@ import {
 
 const Home = () => {
   const { currentUser } = useSelector(state => state.user);
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   // Features section data
   const features = [

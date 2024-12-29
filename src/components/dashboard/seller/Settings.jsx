@@ -24,7 +24,7 @@ import {
 const Settings = () => {
   const dispatch = useDispatch();
   const { currentUser, accessToken, loading, error } = useSelector(state => state.user);
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   // Settings state
   const [settings, setSettings] = useState({

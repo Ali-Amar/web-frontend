@@ -25,7 +25,7 @@ const MentorList = ({
   onRequestMentorship,
   onViewProfile
 }) => {
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
   const [mentors, setMentors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

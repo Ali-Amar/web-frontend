@@ -20,7 +20,7 @@ import ProgressTracking from '../../components/dashboard/progress/ProgressTracki
 
 const Training = () => {
   const { currentUser } = useSelector(state => state.user);
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   const [courses, setCourses] = useState([]);
   const [enrolledCourses, setEnrolledCourses] = useState([]);

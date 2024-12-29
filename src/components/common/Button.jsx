@@ -20,7 +20,7 @@ const Button = ({
   ...props
 }) => {
   // Get language from redux store for any translated button text
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   // Styles based on variant
   const getVariantClasses = () => {

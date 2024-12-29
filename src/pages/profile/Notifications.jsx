@@ -26,7 +26,7 @@ import { timeAgo } from '../../utils/helpers';
 
 const Notifications = () => {
   const { currentUser, accessToken } = useSelector(state => state.user);
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);

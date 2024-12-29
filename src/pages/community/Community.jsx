@@ -30,7 +30,7 @@ import Modal from '../../components/common/Modal';
 const Community = () => {
   const navigate = useNavigate();
   const { currentUser } = useSelector(state => state.user);
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

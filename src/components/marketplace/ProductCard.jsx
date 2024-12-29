@@ -6,7 +6,7 @@ import { Badge, Button, Tooltip } from 'flowbite-react';
 
 const ProductCard = ({ product, onAddToCart, onAddToWishlist }) => {
   const { currentUser } = useSelector(state => state.user);
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   const {
     _id,

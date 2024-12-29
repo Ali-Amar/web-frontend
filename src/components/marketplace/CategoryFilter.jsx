@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { 
+import {
   Button,
   TextInput,
   Label,
@@ -9,7 +9,7 @@ import {
   Checkbox,
   Rating
 } from 'flowbite-react';
-import { 
+import {
   HiFilter,
   HiX,
   HiCheck,
@@ -17,14 +17,14 @@ import {
   HiLocationMarker
 } from 'react-icons/hi';
 
-const CategoryFilter = ({ 
+const CategoryFilter = ({
   categories,
   initialFilters,
   onFilterChange,
   onReset,
-  isLoading 
+  isLoading
 }) => {
-  const language = useSelector(state => state.language) || 'en';
+  const { language } = useSelector(state => state.language) || 'en';
   const [filters, setFilters] = useState(initialFilters || {
     category: '',
     subCategory: '',
@@ -151,8 +151,8 @@ const CategoryFilter = ({
                 <div key={index} className="flex items-center">
                   <Checkbox
                     id={`price-${index}`}
-                    checked={filters.priceRange[0] === range.value[0] && 
-                            filters.priceRange[1] === range.value[1]}
+                    checked={filters.priceRange[0] === range.value[0] &&
+                      filters.priceRange[1] === range.value[1]}
                     onChange={() => handlePriceRangeChange(range.value)}
                   />
                   <Label htmlFor={`price-${index}`} className="ml-2">

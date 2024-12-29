@@ -17,7 +17,7 @@ import { Badge } from 'flowbite-react';
 const MentorSidebar = ({ isOpen }) => {
   const location = useLocation();
   const { currentUser } = useSelector(state => state.user);
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   const navigationItems = [
     {

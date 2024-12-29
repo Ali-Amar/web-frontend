@@ -25,7 +25,7 @@ const CourseList = ({
   onLoadMore,
   hasMore
 }) => {
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
   const [filters, setFilters] = useState({
     search: '',
     category: '',

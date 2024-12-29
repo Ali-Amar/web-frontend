@@ -20,7 +20,7 @@ import {
 import ProductGrid from './ProductGrid';
 
 const ShopProfile = ({ shopData, products, isLoading }) => {
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
   const [activeTab, setActiveTab] = useState('products');
 
   const {

@@ -29,7 +29,7 @@ import MentorshipRequest from './MentorshipRequest';
 
 const MentorProfile = () => {
   const { mentorId } = useParams();
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
   const { currentUser } = useSelector(state => state.user);
 
   const [mentor, setMentor] = useState(null);

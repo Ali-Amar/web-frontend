@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { 
-  FaFacebook, 
-  FaTwitter, 
-  FaInstagram, 
-  FaYoutube, 
-  FaWhatsapp 
+import {
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaYoutube,
+  FaWhatsapp
 } from 'react-icons/fa';
 import { Button } from 'flowbite-react';
 
 const Footer = () => {
   const { currentUser } = useSelector((state) => state.user);
-  const language = useSelector((state) => state.language) || 'en';
+  const { language } = useSelector((state) => state.language) || 'en';
 
   const translations = {
     en: {

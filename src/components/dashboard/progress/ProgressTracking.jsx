@@ -25,7 +25,7 @@ const ProgressTracking = ({
   learningPath,
   timeSpent
 }) => {
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   const calculateOverallProgress = () => {
     if (!enrolledCourses?.length) return 0;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Sidebar, Badge } from 'flowbite-react';
-import { 
+import {
   HiHome,
   HiShoppingBag,
   HiChartBar,
@@ -23,8 +23,8 @@ import {
 const DashSidebar = () => {
   const location = useLocation();
   const { currentUser } = useSelector(state => state.user);
-  const language = useSelector(state => state.language) || 'en';
-
+  const { language } = useSelector(state => state.language) || 'en';
+  console.log(language)
   // Define navigation items based on user role
   const getNavigationItems = () => {
     const baseItems = [
@@ -197,18 +197,16 @@ const DashSidebar = () => {
             <Link
               key={index}
               to={item.path}
-              className={`flex items-center justify-between px-3 py-2 rounded-lg transition-colors ${
-                isActive(item.path)
+              className={`flex items-center justify-between px-3 py-2 rounded-lg transition-colors ${isActive(item.path)
                   ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
-              }`}
+                }`}
             >
               <div className="flex items-center">
-                <item.icon className={`w-5 h-5 mr-3 ${
-                  isActive(item.path)
+                <item.icon className={`w-5 h-5 mr-3 ${isActive(item.path)
                     ? 'text-blue-600 dark:text-blue-400'
                     : 'text-gray-400'
-                }`} />
+                  }`} />
                 <span className="text-sm">
                   {language === 'ur' ? item.nameUrdu : item.name}
                 </span>

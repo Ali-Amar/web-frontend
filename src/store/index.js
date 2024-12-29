@@ -6,11 +6,13 @@ import storage from 'redux-persist/lib/storage';
 import userReducer from "../features/auth/authSlice";
 import themeReducer from "../features/theme/themeSlice";
 import authMiddleware from "./middleware/authMiddleware";
+import languageReducer from "../features/languageSlice";
 
 // Combine reducers
 const rootReducer = combineReducers({
   user: userReducer,
-  theme: themeReducer
+  theme: themeReducer, 
+  language: languageReducer
 });
 
 // Configure persist options

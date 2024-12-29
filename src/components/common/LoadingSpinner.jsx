@@ -9,7 +9,7 @@ const LoadingSpinner = ({
   text = true,
   className = ''
 }) => {
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   // Size mappings for spinner
   const spinnerSizes = {

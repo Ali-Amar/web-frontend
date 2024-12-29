@@ -15,7 +15,7 @@ import { useDropzone } from 'react-dropzone';
 
 const ProductUpload = ({ onSubmit, categories, isLoading }) => {
   const { currentUser } = useSelector(state => state.user);
-  const language = useSelector(state => state.language) || 'en';
+  const {language} = useSelector(state => state.language) || 'en';
 
   const [formData, setFormData] = useState({
     name: '',
