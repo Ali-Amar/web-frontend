@@ -48,7 +48,7 @@ const Training = () => {
       icon: HiLightningBolt,
       title: language === 'ur' ? 'مکمل کورسز' : 'Completed Courses',
       titleUrdu: 'مکمل کورسز',
-      value: enrolledCourses.length || 0,
+      value: enrolledCourses ? enrolledCourses.length : 0,
       color: 'purple'
     }
   ];
