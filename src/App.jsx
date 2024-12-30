@@ -48,6 +48,7 @@ import OrderManager from "./components/dashboard/seller/OrderManager";
 import ProductManager from "./components/dashboard/seller/ProductManager";
 import SellerProfile from "./components/dashboard/seller/SellerProfile";
 import Sales from "./components/dashboard/seller/Sales";
+import Orders from "./components/dashboard/seller/Orders";
 
 // Utils & Route Protection
 import PrivateRoute from "./utils/PrivateRoute";
@@ -103,6 +104,7 @@ function App() {
             <Route path="/seller/products/create" element={<CreateListing />} />
             <Route path="/seller/profile" element={<SellerProfile />} />
             <Route path="/seller/sales" element={<Sales />} />
+            <Route path="/seller/orders" element={<Orders />} />
           </Route>
 
           {/* Admin Routes */}
