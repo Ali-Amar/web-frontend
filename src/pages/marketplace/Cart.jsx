@@ -142,7 +142,7 @@ const Cart = () => {
                   <div className="flex items-center">
                     {/* Product Image */}
                     <img
-                      src={item.images[0]}
+                      src='https://www.mountaingoatsoftware.com/uploads/blog/2016-09-06-what-is-a-product.png'
                       alt={language === 'ur' ? item.nameUrdu : item.name}
                       className="w-24 h-24 object-cover rounded-lg"
                     />

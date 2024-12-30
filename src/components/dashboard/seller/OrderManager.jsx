@@ -14,13 +14,10 @@ import {
 } from 'flowbite-react';
 import {
   HiSearch,
-  HiFilter,
   HiEye,
   HiPhone,
   HiMail,
   HiLocationMarker,
-  HiClock,
-  HiChat
 } from 'react-icons/hi';
 
 const OrderManager = () => {
@@ -33,7 +30,6 @@ const OrderManager = () => {
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [showOrderModal, setShowOrderModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
 
   // Filters
   const [filters, setFilters] = useState({
@@ -65,19 +61,19 @@ const OrderManager = () => {
       });
       
       const response = await fetch(
-        `http://localhost:8080/api/orders?${queryParams}`,
+        `http://localhost:8080/api/seller-orders?${queryParams}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`
-          }
-        }
+          },
+          credentials: 'include'
+        }, 
       );
 
       const data = await response.json();
       if (!response.ok) throw new Error(data.message);
-
-      setOrders(data.orders);
-      setTotalPages(data.totalPages);
+      console.log(data);
+      setOrders(data);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -101,11 +97,6 @@ const OrderManager = () => {
 
       const data = await response.json();
       if (!response.ok) throw new Error(data.message);
-
-      // Update orders list
-      setOrders(orders.map(order => 
-        order._id === orderId ? { ...order, status: newStatus } : order
-      ));
 
       // If updating selected order, update it too
       if (selectedOrder?._id === orderId) {
@@ -207,16 +198,16 @@ const OrderManager = () => {
                   <Table.Cell>{formatDate(order.createdAt)}</Table.Cell>
                   <Table.Cell>
                     <div>
-                      <p className="font-medium">{order.customer.name}</p>
-                      <p className="text-sm text-gray-500">{order.customer.email}</p>
+                      <p className="font-medium">{order.buyer.name}</p>
+                      <p className="text-sm text-gray-500">{order.buyer.email}</p>
                     </div>
                   </Table.Cell>
                   <Table.Cell>
                     Rs. {order.totalAmount.toLocaleString()}
                   </Table.Cell>
-                  <Table.Cell>
+                  {/* <Table.Cell>
                     {getStatusBadge(order.status)}
-                  </Table.Cell>
+                  </Table.Cell> */}
                   <Table.Cell>
                     <div className="flex gap-2">
                       <Button
@@ -233,7 +224,7 @@ const OrderManager = () => {
                         size="sm"
                         color="gray"
                         onClick={() => {
-                          window.location.href = `mailto:${order.customer.email}`;
+                          window.location.href = `mailto:${order.buyer.email}`;
                         }}
                       >
                         <HiMail className="w-4 h-4" />
@@ -246,16 +237,7 @@ const OrderManager = () => {
           </Table>
         )}
 
-        {/* Pagination */}
-        {totalPages > 1 && (
-          <div className="flex justify-center mt-4">
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={setCurrentPage}
-            />
-          </div>
-        )}
+        
       </Card>
 
       {/* Order Details Modal */}
@@ -302,13 +284,13 @@ const OrderManager = () => {
                     <div className="flex items-center gap-2">
                       <HiUser className="w-5 h-5 text-gray-400" />
                       <div>
-                        <p className="font-medium">{selectedOrder.customer.name}</p>
-                        <p className="text-sm text-gray-500">{selectedOrder.customer.email}</p>
+                        <p className="font-medium">{selectedOrder.buyer.name}</p>
+                        <p className="text-sm text-gray-500">{selectedOrder.buyer.email}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
                       <HiPhone className="w-5 h-5 text-gray-400" />
-                      <p>{selectedOrder.customer.phone}</p>
+                      <p>{selectedOrder.buyer.phone}</p>
                     </div>
                   </div>
                 </div>
@@ -320,7 +302,7 @@ const OrderManager = () => {
                   </h4>
                   <div className="flex items-start gap-2">
                     <HiLocationMarker className="w-5 h-5 text-gray-400 mt-1" />
-                    <p className="text-gray-600">{selectedOrder.shippingAddress}</p>
+                    <p className="text-gray-600">{selectedOrder.shipping.address}</p>
                   </div>
                 </div>
 
@@ -330,7 +312,7 @@ const OrderManager = () => {
                     {language === 'ur' ? 'آرڈر کی اشیاء' : 'Order Items'}
                   </h4>
                   <div className="space-y-3">
-                    {selectedOrder.items.map((item) => (
+                    {selectedOrder.products.map((item) => (
                       <div key={item._id} className="flex justify-between items-center">
                         <div className="flex items-center gap-4">
                           <img
@@ -352,24 +334,6 @@ const OrderManager = () => {
                     ))}
                   </div>
                 </div>
-
-                {/* Order Summary */}
-                <div className="border-t pt-4">
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span>{language === 'ur' ? 'سب ٹوٹل' : 'Subtotal'}</span>
-                      <span>Rs. {selectedOrder.subtotal.toLocaleString()}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>{language === 'ur' ? 'شپنگ' : 'Shipping'}</span>
-                      <span>Rs. {selectedOrder.shippingCost.toLocaleString()}</span>
-                    </div>
-                    <div className="flex justify-between font-bold">
-                      <span>{language === 'ur' ? 'کل رقم' : 'Total'}</span>
-                      <span>Rs. {selectedOrder.totalAmount.toLocaleString()}</span>
-                    </div>
-                  </div>
-                </div>
               </div>
             </Modal.Body>
             <Modal.Footer>
@@ -383,7 +347,7 @@ const OrderManager = () => {
                 <Button
                   gradientDuoTone="purpleToBlue"
                   onClick={() => {
-                    window.location.href = `mailto:${selectedOrder.customer.email}`;
+                    window.location.href = `mailto:${selectedOrder.buyer.email}`;
                   }}
                 >
                   <HiMail className="w-4 h-4 mr-2" />

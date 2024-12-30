@@ -127,8 +127,26 @@ const Marketplace = () => {
   };
 
   const handleAddToCart = async (product) => {
-    // Cart functionality
+    try {
+      // Fetch cart from local storage or state
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Check if product is already in cart
+      const existingProduct = cart.find(item => item._id === product._id);
+      if (existingProduct) {
+        existingProduct.quantity += 1;
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
+
+      // Save updated cart to local storage
+      localStorage.setItem('cart', JSON.stringify(cart));
+      console.log('Product added to cart successfully!');
+    } catch (error) {
+      console.error('Error adding product to cart:', error);
+    }
   };
+
 
   const handleAddToWishlist = async (product) => {
     // Wishlist functionality

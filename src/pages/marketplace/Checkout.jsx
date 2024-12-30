@@ -90,17 +90,19 @@ const Checkout = () => {
 
     try {
       const orderData = {
-        items: cart.map(item => ({
+        buyer: currentUser._id,
+        products: cart.map(item => ({
           productId: item._id,
           quantity: item.quantity,
-          price: item.price
+          price: item.price, 
+          seller: item.seller._id
         })),
         shipping: shippingInfo,
         payment: {
           method: selectedPaymentMethod,
           total: total,
           ...(selectedPaymentMethod === 'card' && { cardDetails: paymentInfo })
-        }
+        },
       };
 
       const response = await fetch('http://localhost:8080/api/orders', {
@@ -109,7 +111,8 @@ const Checkout = () => {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${accessToken}`
         },
-        body: JSON.stringify(orderData)
+        body: JSON.stringify(orderData),
+        credentials: 'include'
       });
 
       const data = await response.json();
@@ -252,8 +255,8 @@ const Checkout = () => {
                       key={method.id}
                       className={`
                         border rounded-lg p-4 cursor-pointer transition-colors
-                        ${selectedPaymentMethod === method.id 
-                          ? 'border-purple-500 bg-purple-50 dark:bg-purple-900/20' 
+                        ${selectedPaymentMethod === method.id
+                          ? 'border-purple-500 bg-purple-50 dark:bg-purple-900/20'
                           : 'border-gray-200 dark:border-gray-700'}
                       `}
                       onClick={() => setSelectedPaymentMethod(method.id)}
@@ -454,8 +457,8 @@ const Checkout = () => {
           {error}
         </Alert>
       )}
-      </div>
-    );
-  };
-  
-  export default Checkout;
+    </div>
+  );
+};
+
+export default Checkout;

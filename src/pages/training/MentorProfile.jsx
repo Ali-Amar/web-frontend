@@ -358,11 +358,10 @@ const MentorProfile = () => {
                 {mentor.schedule.map((slot, index) => (
                   <div
                     key={index}
-                    className={`p-2 text-center rounded ${
-                      slot.available
+                    className={`p-2 text-center rounded ${slot.available
                         ? 'bg-purple-50 dark:bg-purple-900/20 text-purple-600 cursor-pointer hover:bg-purple-100'
                         : 'bg-gray-100 dark:bg-gray-800 text-gray-400'
-                    }`}
+                      }`}
                   >
                     <div className="text-sm font-medium">
                       {new Date(slot.date).toLocaleDateString(undefined, { weekday: 'short' })}
