@@ -116,13 +116,25 @@ const Header = ({ onToggleSidebar }) => {
 
           {/* Center Section - Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            {currentUser?.role === 'seller' ? (
+          {currentUser?.role === 'seller' ? (
               <>
                 <Link to="/seller" className="nav-link">
                   {language === 'ur' ? 'ڈیش بورڈ' : 'Dashboard'}
                 </Link>
                 <Link to="/seller/products" className="nav-link">
                   {language === 'ur' ? 'پروڈکٹس' : 'Products'}
+                </Link>
+                <Link to="/marketplace" className="nav-link">
+                  {language === 'ur' ? 'مارکیٹ پلیس' : 'Marketplace'}
+                </Link>
+                <Link to="/training" className="nav-link">
+                  {language === 'ur' ? 'تربیت' : 'Training'}
+                </Link>
+                <Link to="/mentorship" className="nav-link">
+                  {language === 'ur' ? 'مینٹرشپ' : 'Mentorship'}
+                </Link>
+                <Link to="/about" className="nav-link">
+                  {language === 'ur' ? 'ہمارے بارے میں' : 'About Us'}
                 </Link>
               </>
             ) : (
