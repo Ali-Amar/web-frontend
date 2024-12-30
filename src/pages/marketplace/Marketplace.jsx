@@ -163,7 +163,7 @@ const Marketplace = () => {
             {currentUser?.role === 'seller' && (
               <Button
                 as={Link}
-                to="/product/upload"
+                to="/seller/products"
                 gradientDuoTone="pinkToOrange"
                 size="xl"
               >
