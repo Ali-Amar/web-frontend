@@ -24,6 +24,7 @@ import ShopProfile from "./pages/marketplace/ShopProfile";
 import Cart from "./pages/marketplace/Cart";
 import Checkout from "./pages/marketplace/Checkout";
 import CreateListing from "./pages/marketplace/CreateListing";
+import BuyerOrder from "./pages/buyer/BuyerOrder";
 
 // Training & Mentorship
 import Training from "./pages/training/Training";
@@ -83,6 +84,7 @@ function App() {
             <Route path="/marketplace/shop/:id" element={<ShopProfile />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/orders" element={<BuyerOrder />} />
             
             {/* Training Routes */}
             <Route path="/training" element={<Training />} />

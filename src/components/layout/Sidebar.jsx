@@ -47,6 +47,12 @@ const Sidebar = ({ isOpen }) => {
         showFor: ['buyer']
       },
       {
+        name: language === 'ur' ? 'میرے آرڈرز' : 'My Orders',
+        icon: HiShoppingBag,
+        path: '/orders',
+        showFor: ['buyer']
+      },
+      {
         name: language === 'ur' ? 'محفوظ اشیاء' : 'Saved Items',
         icon: HiHeart,
         path: '/saved',
