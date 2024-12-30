@@ -118,10 +118,10 @@ const Header = ({ onToggleSidebar }) => {
           <nav className="hidden md:flex items-center space-x-6">
             {currentUser?.role === 'seller' ? (
               <>
-                <Link to="/dashboard" className="nav-link">
+                <Link to="/seller" className="nav-link">
                   {language === 'ur' ? 'ڈیش بورڈ' : 'Dashboard'}
                 </Link>
-                <Link to="/products" className="nav-link">
+                <Link to="/seller/products" className="nav-link">
                   {language === 'ur' ? 'پروڈکٹس' : 'Products'}
                 </Link>
               </>
